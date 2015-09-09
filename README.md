@@ -11,10 +11,11 @@ iterate over nested array for boolean value
 iterate over nested array for matching element
 count elements in array based on a condition
 use data from array iteration within method
+define a constant
 
 3. instructions
 
-define the win combinations of tic tac toe
+define the win combinations of tic tac toe. remind them about constants and method scope. tell them to use a constant.
 build the won? method - first by getting the logic for one combination by hardcoding. they are given position_taken that should help make sure something is occupied.
 iterate over win combinations returning the combo that won
 build winner and use won? to find who won.
