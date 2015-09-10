@@ -1,5 +1,5 @@
 def position_taken?(board, location)
-  !(position(board, location).nil? || position(board, location) == "")
+  !(board[location].nil? || board[location] == " ")
 end
 
 # Define your WIN_COMBINATIONS constant
