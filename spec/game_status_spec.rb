@@ -28,26 +28,42 @@ describe "./lib/game_status.rb" do
 
       expect(won?(board)).to be_truthy
     end
+
+    # Must Spec Return Values
   end
 
-  describe '#draw?' do
+  describe '#full?' do
     it 'returns true for a draw' do
       board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
 
-      expect(draw?(board)).to be_truthy
+      expect(full?(board)).to be_truthy
     end
 
-    it 'returns false for a won game' do
+    it 'returns false for an in-progress game' do
+      board = ["X", " ", "X", " ", "X", " ", "O", "O", " "]
+
+      expect(full?(board)).to be_falsey
+    end    
+  end
+
+  describe '#over?' do
+    it 'returns true for a draw' do
+      board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
+
+      expect(over?(board)).to be_truthy
+    end
+
+    it 'returns true for a won game' do
       board = ["X", "O", "X", "O", "X", "X", "O", "O", "X"]
 
-      expect(draw?(board)).to be_falsey
+      expect(over?(board)).to be_truthy
     end    
 
     it 'returns false for an in-progress game' do
-      board = ["X", " ", "X", " ", "X", " ", "O", "O", "X"]
+      board = ["X", " ", "X", " ", "X", " ", "O", "O", " "]
 
-      expect(draw?(board)).to be_falsey
-    end    
+      expect(over?(board)).to be_falsey
+    end 
   end
 
   describe '#winner' do

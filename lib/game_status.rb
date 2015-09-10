@@ -1,3 +1,5 @@
+require 'pry'
+
 def position_taken?(board, location)
   !(board[location].nil? || board[location] == " ")
 end
@@ -14,7 +16,7 @@ WIN_COMBINATIONS = [
   [6,4,2]
 ]
 
-# Define won?, winner and draw? below
+# Define won?, winner and full? below
 def won?(board)
   WIN_COMBINATIONS.detect do |combo|
     board[combo[0]] == board[combo[1]] &&
@@ -23,8 +25,12 @@ def won?(board)
   end
 end
 
-def draw?(board)
-  !won?(board) && board.all?{|token| token == "X" || token == "O"}
+def full?(board)
+  board.all?{|token| token == "X" || token == "O"}
+end
+
+def over?(board)
+  won?(board) || full?(board)
 end
 
 def winner(board)

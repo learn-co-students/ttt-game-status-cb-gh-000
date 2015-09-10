@@ -19,4 +19,5 @@ define the win combinations of tic tac toe. remind them about constants and meth
 build the won? method - first by getting the logic for one combination by hardcoding. they are given position_taken that should help make sure something is occupied.
 iterate over win combinations returning the combo that won
 build winner and use won? to find who won.
-build draw? use won? and then make sure the board is entirely filled.
+build full? to make sure it's filled filled.
+build over?
