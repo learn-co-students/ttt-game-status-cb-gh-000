@@ -61,9 +61,9 @@ Run the tests with `learn` until your `WIN_COMBINATIONS` contains all the possib
 
 ### `#won?`
 
-Your `#won?` method should accept a board as an argument and return false/nil if there is no win combination present in the board and return the winning combination indexes as an array if there is a win.
-
 Now that we have a constant that defines the possible win combinations (`WIN_COMBINATIONS`), we can build a method that can check a tic tac toe board and return true if there is a win and false if not.
+
+Your `#won?` method should accept a board as an argument and return false/nil if there is no win combination present in the board and return the winning combination indexes as an array if there is a win.
 
 Iterate over the possible win combinations defined in `WIN_COMBINATIONS` and check if the board has the same player token in each index of a winning combination. The pseudocode might look like:
 
@@ -121,7 +121,19 @@ won?(board) #=> nil
 
 You should be able to iterate over the combinations defined in `WIN_COMBINATIONS` using `each` or a higher-level iterator to return the correct board indexes that created the win.
 
-Your method should work for both boards that win with an "X" or boards that win with an "O".
+Your method should work for both boards that win with an "X" or boards that win with an "O". We've provided you with a helper method called `position_taken?` that takes a board and an index as arguments and returns true or false based on whether that position on the board has been filled. 
+
+```ruby
+board = ["X", "X", "X", "O", " ", "O", " ", " ", " "]
+#  X | X | X
+# -----------
+#  O |   | O
+# -----------
+#    |   |  
+
+position_taken?(board, 2) #=> true
+position_taken?(board, 7) #=> false
+```
 
 Read the specs in `spec/game_status_spec.rb` starting on LOC 19, the `describe "#won?"` block.
 
