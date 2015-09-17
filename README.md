@@ -70,7 +70,7 @@ Iterate over the possible win combinations defined in `WIN_COMBINATIONS` and che
 ```
 for each win_combination in WIN_COMBINATIONS
   # win_combination is a 3 element array of indexes that compose a win, [0,1,2]
-  # grab each index frmo the win_combination that composes a win.
+  # grab each index from the win_combination that composes a win.
   win_index_1 = win_combination[0]
   win_index_2 = win_combination[1]
   win_index_3 = win_combination[2]
@@ -82,7 +82,7 @@ for each win_combination in WIN_COMBINATIONS
   if position_1 == "X" && position_2 == "X" && position_3 = "X"
     return win_combination # return the win_combination indexes that won.
   else
-    flase
+    false
   end
 end
 ```
@@ -119,7 +119,7 @@ board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 won?(board) #=> nil
 ```
 
-You should be able to iterate over the combinations defined in `WIN_COMBINATIONS` using `each` or a higher-level iterator to return the correct boad indexes that created the win.
+You should be able to iterate over the combinations defined in `WIN_COMBINATIONS` using `each` or a higher-level iterator to return the correct board indexes that created the win.
 
 Your method should work for both boards that win with an "X" or boards that win with an "O".
 
@@ -182,8 +182,8 @@ The `#winner` method should accept a board and return the token, "X" or "O" that
 The `#winner` method can be greatly simplified by using the methods and their return values you defined above.
 
 ```ruby
-x_win_diagnol = ["X", " ", " ", " ", "X", " ", " ", " ", "X"]
-winner(x_win_diagnol) #=> "X"
+x_win_diagonal = ["X", " ", " ", " ", "X", " ", " ", " ", "X"]
+winner(x_win_diagonl) #=> "X"
 
 o_win_center_column = ["X", "O", " ", " ", "O", " ", " ", "O", "X"]
 winner(o_win_center_column) #=> "O"
