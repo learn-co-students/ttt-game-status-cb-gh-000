@@ -65,13 +65,13 @@ describe "./lib/game_status.rb" do
       expect(won?(board)).to match_array([2,5,8])
     end
 
-    it 'returns an array of matching indexes for a left diagnol win' do
+    it 'returns an array of matching indexes for a left diagonal win' do
       board = ["X", " ", " ", " ", "X", " ", " ", " ", "X"]
 
       expect(won?(board)).to match_array([0,4,8])
     end
 
-    it 'returns an array of matching indexes for a right diagnol win' do
+    it 'returns an array of matching indexes for a right diagonal win' do
       board = [" ", " ", "O", " ", "O", " ", "O", " ", " "]
 
       expect(won?(board)).to match_array([2,4,6])
