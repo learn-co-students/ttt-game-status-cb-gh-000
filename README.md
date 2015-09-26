@@ -59,6 +59,10 @@ WIN_COMBINATIONS = [
 
 Run the tests with `learn` until your `WIN_COMBINATIONS` contains all the possible solutions.
 
+#### What's a CONSTANT
+
+A Constant is a variable type in Ruby that has a larger scope than our local variables, namely, methods can read values from constant's defined outside the method. Constants are a variable type for data that is unlikely to change.
+
 ### `#won?`
 
 Now that we have a constant that defines the possible win combinations (`WIN_COMBINATIONS`), we can build a method that can check a tic tac toe board and return true if there is a win and false if not.
@@ -121,7 +125,7 @@ won?(board) #=> nil
 
 You should be able to iterate over the combinations defined in `WIN_COMBINATIONS` using `each` or a higher-level iterator to return the correct board indexes that created the win.
 
-Your method should work for both boards that win with an "X" or boards that win with an "O". We've provided you with a helper method called `position_taken?` that takes a board and an index as arguments and returns true or false based on whether that position on the board has been filled. 
+Your method should work for both boards that win with an "X" or boards that win with an "O". We've provided you with a helper method called `position_taken?` that takes a board and an index as arguments and returns true or false based on whether that position on the board has been filled.
 
 ```ruby
 board = ["X", "X", "X", "O", " ", "O", " ", " ", " "]
