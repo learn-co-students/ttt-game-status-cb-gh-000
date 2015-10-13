@@ -172,7 +172,6 @@ You can imagine it's behavior:
 
   incomplete_board = ["X", " ", "X", " ", "X", " ", "O", "O", "X"]
   draw?(incomplete_board) #=> false
-end
 ```
 
 ### `#over?`
