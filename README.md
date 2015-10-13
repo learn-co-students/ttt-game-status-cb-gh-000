@@ -147,7 +147,6 @@ The `#full?` method should accept a board and return true if every element in th
 
 ```ruby
 full_board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
-
 full?(full_board) #=> true
 
 incomplete_board = ["X", " ", "X", "O", " ", "X", "O", " ", "O"]
@@ -166,7 +165,7 @@ You can imagine it's behavior:
 
 ```ruby
   draw_board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
-  draw?(draw_board)
+  draw?(draw_board) #=> true
 
   x_diagnol_won = ["X", "O", "X", "O", "X", "O", "O", "O", "X"]
   draw?(x_diagnol_won) #=> false
@@ -188,7 +187,7 @@ won_board = ["X", "O", "X", "O", "X", "X", "O", "O", "X"]
 over?(won_board) #=> true
 
 inprogress_board = ["X", " ", "X", " ", "X", " ", "O", "O", " "]
-over?(inprogress_board)
+over?(inprogress_board) #=> false
 ```
 
 ### `#winner`
