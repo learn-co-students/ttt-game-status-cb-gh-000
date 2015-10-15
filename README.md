@@ -153,7 +153,7 @@ incomplete_board = ["X", " ", "X", "O", " ", "X", "O", " ", "O"]
 full?(incomplete_board) #=> false
 ```
 
-The `#full?` method doesn't need to worry about draws or winning combinations, simply return true if there is an available position and false if there is not.
+The `#full?` method doesn't need to worry about draws or winning combinations, simply return false if there is an available position and true if there is not.
 
 There is a great high-level iterator besides `#each` that will make your code super awesome elegant. But `#each` will certainly work great too.
 
