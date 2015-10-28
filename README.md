@@ -161,7 +161,7 @@ There is a great high-level iterator besides `#each` that will make your code su
 
 Build a method `#draw?` that accepts a board and returns true if the board has not been won and is full and false if the board is not won and the board is not full, and false if the board is won. You should be able to compose this method solely using the methods you used above with some ruby logic.
 
-You can imagine it's behavior:
+You can imagine its behavior:
 
 ```ruby
   draw_board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
