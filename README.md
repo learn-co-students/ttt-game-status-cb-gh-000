@@ -61,7 +61,7 @@ Run the tests with `learn` until your `WIN_COMBINATIONS` contains all the possib
 
 #### What's a CONSTANT
 
-A Constant is a variable type in Ruby that has a larger scope than our local variables, namely, methods can read values from constant's defined outside the method. Constants are a variable type for data that is unlikely to change. You can define a constant by starting the variable definition with a capital letter.
+A Constant is a variable type in Ruby that has a larger scope than our local variables, namely, methods can read values from constants defined outside the method. Constants are a variable type for data that is unlikely to change. You can define a constant by starting the variable definition with a capital letter.
 
 ### `#won?`
 
