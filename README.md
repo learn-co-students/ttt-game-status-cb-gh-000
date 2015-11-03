@@ -67,7 +67,7 @@ A Constant is a variable type in Ruby that has a larger scope than our local var
 
 Now that we have a constant that defines the possible win combinations (`WIN_COMBINATIONS`), we can build a method that can check a tic tac toe board and return true if there is a win and false if not.
 
-Your `#won?` method should accept a board as an argument and return false/nil if there is no win combination present in the board and return the winning combination indexes as an array if there is a win.
+Your `#won?` method should accept a board as an argument and return false/nil if there is no win combination present in the board and return the winning combination indexes as an array if there is a win. To clarify: this method should __not__ return *who* won (aka X or O), but rather *how* they won -- by means of the winning combination.
 
 Iterate over the possible win combinations defined in `WIN_COMBINATIONS` and check if the board has the same player token in each index of a winning combination. The pseudocode might look like:
 
