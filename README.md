@@ -205,3 +205,5 @@ winner(o_win_center_column) #=> "O"
 no_winner_board = ["X", "O", " ", " ", " ", " ", " ", "O", "X"]
 winner(no_winner_board) #=> nil
 ```
+
+<a href='https://learn.co/lessons/ttt-game-status' data-visibility='hidden'>View this lesson on Learn.co</a>
