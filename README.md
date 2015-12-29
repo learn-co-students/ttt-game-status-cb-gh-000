@@ -61,13 +61,13 @@ Run the tests with `learn` until your `WIN_COMBINATIONS` contains all the possib
 
 #### What's a CONSTANT
 
-A Constant is a variable type in Ruby that has a larger scope than our local variables, namely, methods can read values from constant's defined outside the method. Constants are a variable type for data that is unlikely to change. You can define a constant by starting the variable definition with a capital letter.
+A Constant is a variable type in Ruby that has a larger scope than our local variables, namely, methods can read values from constants defined outside the method. Constants are a variable type for data that is unlikely to change. You can define a constant by starting the variable definition with a capital letter.
 
 ### `#won?`
 
 Now that we have a constant that defines the possible win combinations (`WIN_COMBINATIONS`), we can build a method that can check a tic tac toe board and return true if there is a win and false if not.
 
-Your `#won?` method should accept a board as an argument and return false/nil if there is no win combination present in the board and return the winning combination indexes as an array if there is a win.
+Your `#won?` method should accept a board as an argument and return false/nil if there is no win combination present in the board and return the winning combination indexes as an array if there is a win. To clarify: this method should __not__ return *who* won (aka X or O), but rather *how* they won -- by means of the winning combination.
 
 Iterate over the possible win combinations defined in `WIN_COMBINATIONS` and check if the board has the same player token in each index of a winning combination. The pseudocode might look like:
 
@@ -147,14 +147,13 @@ The `#full?` method should accept a board and return true if every element in th
 
 ```ruby
 full_board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
-
 full?(full_board) #=> true
 
 incomplete_board = ["X", " ", "X", "O", " ", "X", "O", " ", "O"]
 full?(incomplete_board) #=> false
 ```
 
-The `#full?` method doesn't need to worry about draws or winning combinations, simply return true if there is an available position and false if there is not.
+The `#full?` method doesn't need to worry about draws or winning combinations, simply return false if there is an available position and true if there is not.
 
 There is a great high-level iterator besides `#each` that will make your code super awesome elegant. But `#each` will certainly work great too.
 
@@ -162,18 +161,17 @@ There is a great high-level iterator besides `#each` that will make your code su
 
 Build a method `#draw?` that accepts a board and returns true if the board has not been won and is full and false if the board is not won and the board is not full, and false if the board is won. You should be able to compose this method solely using the methods you used above with some ruby logic.
 
-You can imagine it's behavior:
+You can imagine its behavior:
 
 ```ruby
   draw_board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
-  draw?(draw_board)
+  draw?(draw_board) #=> true
 
   x_diagnol_won = ["X", "O", "X", "O", "X", "O", "O", "O", "X"]
   draw?(x_diagnol_won) #=> false
 
   incomplete_board = ["X", " ", "X", " ", "X", " ", "O", "O", "X"]
   draw?(incomplete_board) #=> false
-end
 ```
 
 ### `#over?`
@@ -188,7 +186,7 @@ won_board = ["X", "O", "X", "O", "X", "X", "O", "O", "X"]
 over?(won_board) #=> true
 
 inprogress_board = ["X", " ", "X", " ", "X", " ", "O", "O", " "]
-over?(inprogress_board)
+over?(inprogress_board) #=> false
 ```
 
 ### `#winner`
@@ -207,3 +205,5 @@ winner(o_win_center_column) #=> "O"
 no_winner_board = ["X", "O", " ", " ", " ", " ", " ", "O", "X"]
 winner(no_winner_board) #=> nil
 ```
+
+<a href='https://learn.co/lessons/ttt-game-status' data-visibility='hidden'>View this lesson on Learn.co</a>
