@@ -206,4 +206,4 @@ no_winner_board = ["X", "O", " ", " ", " ", " ", " ", "O", "X"]
 winner(no_winner_board) #=> nil
 ```
 
-<a href='https://learn.co/lessons/ttt-game-status' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-game-status' title='Tic Tac Toe Game Status'>Tic Tac Toe Game Status</a> on Learn.co and start learning to code for free.</p>
