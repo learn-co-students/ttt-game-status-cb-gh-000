@@ -3,7 +3,7 @@
 ## Objectives
 
 1. Define a constant.
-2. Created a nested array.
+2. Create a nested array.
 3. Use iteration.
 4. Iterate over a nested array.
 5. Find matching booleans from an array.
@@ -83,7 +83,7 @@ for each win_combination in WIN_COMBINATIONS
   position_2 = board[win_index_2] # load the value of the board at win_index_2
   position_3 = board[win_index_3] # load the value of the board at win_index_3
 
-  if position_1 == "X" && position_2 == "X" && position_3 = "X"
+  if position_1 == "X" && position_2 == "X" && position_3 == "X"
     return win_combination # return the win_combination indexes that won.
   else
     false
@@ -206,4 +206,6 @@ no_winner_board = ["X", "O", " ", " ", " ", " ", " ", "O", "X"]
 winner(no_winner_board) #=> nil
 ```
 
-<a href='https://learn.co/lessons/ttt-game-status' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-game-status' title='Tic Tac Toe Game Status'>Tic Tac Toe Game Status</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-game-status'>Tic Tac Toe Game Status</a> on Learn.co and start learning to code for free.</p>
