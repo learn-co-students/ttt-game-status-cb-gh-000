@@ -99,7 +99,13 @@ describe "./lib/game_status.rb" do
       expect(draw?(board)).to be_truthy
     end
 
-    it 'returns false for a won game' do
+    it 'returns false for a game won in the first row' do
+      board = ["X", "X", "X", "O", "X", "O", "O", "O", "X"]
+
+      expect(draw?(board)).to be_falsey
+    end
+
+    it 'returns false for a won game diagonaly' do
       board = ["X", "O", "X", "O", "X", "O", "O", "O", "X"]
 
       expect(draw?(board)).to be_falsey
