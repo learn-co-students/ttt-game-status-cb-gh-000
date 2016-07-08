@@ -167,8 +167,8 @@ You can imagine its behavior:
   draw_board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
   draw?(draw_board) #=> true
 
-  x_diagnol_won = ["X", "O", "X", "O", "X", "O", "O", "O", "X"]
-  draw?(x_diagnol_won) #=> false
+  x_diagonal_won = ["X", "O", "X", "O", "X", "O", "O", "O", "X"]
+  draw?(x_diagonal_won) #=> false
 
   incomplete_board = ["X", " ", "X", " ", "X", " ", "O", "O", "X"]
   draw?(incomplete_board) #=> false
@@ -197,7 +197,7 @@ The `#winner` method can be greatly simplified by using the methods and their re
 
 ```ruby
 x_win_diagonal = ["X", " ", " ", " ", "X", " ", " ", " ", "X"]
-winner(x_win_diagonl) #=> "X"
+winner(x_win_diagonal) #=> "X"
 
 o_win_center_column = ["X", "O", " ", " ", "O", " ", " ", "O", "X"]
 winner(o_win_center_column) #=> "O"
@@ -207,5 +207,3 @@ winner(no_winner_board) #=> nil
 ```
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-game-status' title='Tic Tac Toe Game Status'>Tic Tac Toe Game Status</a> on Learn.co and start learning to code for free.</p>
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-game-status'>Tic Tac Toe Game Status</a> on Learn.co and start learning to code for free.</p>
