@@ -42,7 +42,6 @@ def winner(board)
   if result[0] == nil
     nil
   else
-    print result
     board[result[0][0]]
   end
 end
