@@ -15,5 +15,31 @@ WIN_COMBINATIONS = [
   [2,4,6],
 ]
 
-def won?
+def won?(board)
+  WIN_COMBINATIONS.find { |win_combination|
+    board[win_combination[0]] == "X" &&
+    board[win_combination[1]] == "X" &&
+    board[win_combination[2]] == "X" ||
+    board[win_combination[0]] == "O" &&
+    board[win_combination[1]] == "O" &&
+    board[win_combination[2]] == "O"
+  }
+end
+
+def full?(board)
+  board.all? { |space| space == "X" || space == "O" } ? true : false
+end
+
+
+def draw?(board)
+  !won?(board) && full?(board) ? true : false
+end
+
+
+def over?(board)
+  won?(board) || full?(board) ? true : false
+end
+
+def winner(board)
+  won?(board) ? board[won?(board)[0]] : nil
 end
