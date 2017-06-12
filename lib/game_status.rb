@@ -44,7 +44,7 @@ end
 
 # if the game has been won, returns the winner
 def winner(board)
-  if won?(board)
+  if over?(board) && won?(board)
     winning_row = won?(board)
     winner = board[winning_row[0]]
   else
