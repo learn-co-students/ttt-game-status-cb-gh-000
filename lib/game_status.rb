@@ -48,5 +48,5 @@ end
 
 def winner board
   wi = wininfo board
-  p wi[:winner]
+  wi[:winner]
 end
