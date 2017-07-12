@@ -27,11 +27,7 @@ def full?(board)
 end
 
 def draw?(board)
-  if won?(board)
-    return false
-  else
-    return full?(board)
-  end
+  return !won?(board) && full?(board)
 end
 
 def over?(board)
@@ -39,14 +35,7 @@ def over?(board)
 end
 
 def winner(board)
-  winner = won?(board)
-  if winner != false
-    if board[winner[0]] == "X"
-      return "X"
-    elsif board[winner[0]] == "O"
-      return "O"
-    end
-  else
-    return nil
+  if winner = won?(board)
+    return board[winner[0]]
   end
 end
