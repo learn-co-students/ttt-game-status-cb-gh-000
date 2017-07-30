@@ -146,7 +146,7 @@ describe "./lib/game_status.rb" do
     end
 
     it 'returns O when O won' do
-      board = ["X", "O", " ", " ", "O", " ", " ", "O", "X"]
+      board = ["X", "O", " ", "X", "O", " ", " ", "O", "X"]
 
       expect(winner(board)).to eq("O")
     end
