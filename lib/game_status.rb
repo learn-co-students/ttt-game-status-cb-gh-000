@@ -46,11 +46,5 @@ draw?(board) || full?(board) || won?(board) ? true : false
 end
 
 def winner(board)
-  if over?(board)
-    if board.grep('X').size > board.grep('O').size
-      return "X"
-    else
-      return "O"
-      end
-  end
+  over?(board) ? board[won?(board)[0]] : nil
 end
