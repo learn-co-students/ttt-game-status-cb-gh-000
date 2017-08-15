@@ -207,5 +207,3 @@ winner(no_winner_board) #=> nil
 ```
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-game-status' title='Tic Tac Toe Game Status'>Tic Tac Toe Game Status</a> on Learn.co and start learning to code for free.</p>
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/ttt-game-status'>Tic Tac Toe Game Status</a> on Learn.co and start learning to code for free.</p>
