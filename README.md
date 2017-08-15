@@ -91,7 +91,7 @@ for each win_combination in WIN_COMBINATIONS
 end
 ```
 
-That is a very verbose and explicit example of how you might iterate over a nested array of `WIN_COMBINATIONS` and checking each win combination index against the value of the board at that position.
+That is a very verbose and explicit example of how you might iterate over a nested array of `WIN_COMBINATIONS` and check each win combination index against the value of the board at that position.
 
 For example, on a board that has a winning combination in the top row, `#won?` should return `[0,1,2]`, the indexes in the board that created the win:
 
@@ -207,3 +207,5 @@ winner(no_winner_board) #=> nil
 ```
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-game-status' title='Tic Tac Toe Game Status'>Tic Tac Toe Game Status</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/ttt-game-status'>Tic Tac Toe Game Status</a> on Learn.co and start learning to code for free.</p>
