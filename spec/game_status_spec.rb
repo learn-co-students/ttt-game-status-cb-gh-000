@@ -125,8 +125,14 @@ describe "./lib/game_status.rb" do
       expect(over?(board)).to be_truthy
     end
 
-    it 'returns true for a won game' do
+    it 'returns true for a won game when the board is full' do
       board = ["X", "O", "X", "O", "X", "X", "O", "O", "X"]
+
+      expect(over?(board)).to be_truthy
+    end
+
+    it 'returns true for a won game when the board is not full' do
+      board = ["X", " ", " ", "O", "O", "O", "X", "X", " "]
 
       expect(over?(board)).to be_truthy
     end
