@@ -61,3 +61,12 @@ def over?(board)
     return false
   end
 end
+def winner(board)
+  if won?(board) != false
+    win_board = won?(board)
+    token = win_board[0]
+    return board[token]
+  else
+    return nil
+    end
+  end
