@@ -48,6 +48,7 @@ def over?(board)
 end
 
 # return the token, "X" or "O" that has won the game given a winning board
+# no ? on method name since this method does not return a boolean
 def winner(board)
   # if there was a winning combination
   if won?(board)
