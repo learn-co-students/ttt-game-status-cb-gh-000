@@ -16,9 +16,7 @@ WIN_COMBINATIONS = [
 ]
 
 def comb_won?(board, comb)
-  won_o = comb.all?{|i| board[i] == "O"}
-  won_x = comb.all?{|i| board[i] == "X"}
-  return (won_o || won_x)
+  comb.all?{|i| board[i] == "O"} || comb.all?{|i| board[i] == "X"}
 end
 
 def won?(board)
