@@ -17,13 +17,13 @@ describe "./lib/game_status.rb" do
   end
 
   describe "#won?" do
-    it 'returns false for an empty board' do
+    it 'returns falsey for an empty board' do
       board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
       expect(won?(board)).to be_falsey
     end
 
-    it 'returns false for a draw' do
+    it 'returns falsey for a draw' do
       board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
 
       expect(won?(board)).to be_falsey
