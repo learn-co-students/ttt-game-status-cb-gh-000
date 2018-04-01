@@ -11,11 +11,10 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  WIN_COMBINATIONS.each do |combination|
-    return combination if combination.all? { |val| board[val] == 'X' }
-    return combination if combination.all? { |val| board[val] == 'O' }
+  WIN_COMBINATIONS.detect do |combination|
+     position_taken?(board, combination[0]) &&
+     combination.all? { |val| board[val] == board[combination[0]] }
   end
-  nil
 end
 
 def full?(board)
