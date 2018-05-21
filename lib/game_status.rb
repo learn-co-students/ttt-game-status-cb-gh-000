@@ -3,8 +3,8 @@ def position_taken?(board, index)
 end
 
 # Define your WIN_COMBINATIONS constant
+WIN_COMBINATIONS=[[0,1,2],[0,3,6],[1,4,7],[2,5,8],[3,4,5],[6,7,8],[0,4,8],[2,4,6]]
 def won?(board)
-  WIN_COMBINATIONS=[[0,1,2],[0,3,6],[1,4,7],[2,5,8],[3,4,5],[6,7,8],[0,4,8],[2,4,6]]
   WIN_COMBINATIONS.each do |cur|
     if(board[cur[0]]=="X" && board[cur[1]]=="X" && board[cur[2]]=="X")
       return cur
@@ -13,32 +13,39 @@ def won?(board)
       return cur
     end
   end
+  return nil
 end
 
 def full?(board)
-  ans=0
-  board.each |x|
-    if(x=="X" || x=="O")
-      ans+=1
-  end
-  return ans==9
+  ind=0
+  9.times{
+    if(board[ind]!="X" && board[ind]!="O")
+      return false
+    end
+    ind+=1
+  }
+return true
 end
 
 def draw?(board)
-  if(won?(board))
+  if(full?(board) && !won?(board))
     return true
-  else
-    return false
   end
+  return false
 end
 
 def over?(board)
-  return full?(board)
+  return (full?(board)||won?(board))
 end
 
 def winner(board)
   x=won?(board)
-    return x[0]
-
-
+    if(x)
+      if(board[x[0]]=="X")
+        return "X"
+      else
+        return "O"
+      end
+    end
+    return nil
 end
