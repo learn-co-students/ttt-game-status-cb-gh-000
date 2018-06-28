@@ -40,24 +40,28 @@ end
 end
 
 def draw?(board)
-   if (full?(board) && (won?(board) == false))
-     return true
-   else (!full?(board) && (won?(board) == false)) || (!(won?(board) == false))
-    false
-   end
+    if (full?(board) && !won?(board))
+      true
+    elsif (!full?(board) && won?(board) == false)
+      false
+    elsif !won?(board) == false
+      false
+    else
+      false
+    end
 end
 
 def over?(board)
-if (!(won?(board) == false) || draw?(board) || full?(board))
-    return true
+if (won?(board) || draw?(board) || full?(board))
+      true
   else
-  false
+      false
 
 end
 end
 
 def winner(board)
-  if !(won?(board) == false)
+  if won?(board)
     won?(board).each do |winning_index|
       if (board[winning_index] == "X")
         return "X"
