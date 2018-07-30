@@ -159,7 +159,7 @@ There is a great high-level iterator besides `#each` that will make your code su
 
 ### `#draw?`
 
-Build a method `#draw?` that accepts a board and returns true if the board has not been won and is full and false if the board is not won and the board is not full, and false if the board is won. You should be able to compose this method solely using the methods you used above with some ruby logic.
+Build a method `#draw?` that accepts a board and returns true if the board has not been won but is full, false if the board is not won and the board is not full, and false if the board is won. You should be able to compose this method solely using the methods you used above with some ruby logic.
 
 You can imagine its behavior:
 
@@ -206,4 +206,4 @@ no_winner_board = ["X", "O", " ", " ", " ", " ", " ", "O", "X"]
 winner(no_winner_board) #=> nil
 ```
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-game-status' title='Tic Tac Toe Game Status'>Tic Tac Toe Game Status</a> on Learn.co and start learning to code for free.</p>
+<p class='util--hide'>View <a href='https://learn.co/lessons/ttt-game-status'>Tic Tac Toe Game Status</a> on Learn.co and start learning to code for free.</p>
