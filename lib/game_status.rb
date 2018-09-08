@@ -1,3 +1,4 @@
+# Helper Method
 def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
@@ -11,45 +12,32 @@ WIN_COMBINATIONS = [
   [1,4,7],
   [2,5,8],
   [0,4,8],
-  [2,4,6]
+  [6,4,2]
 ]
 
+# Define won?, full?, draw?, over?, and winner below
 def won?(board)
-  WIN_COMBINATIONS.any? do |combination|
-    if board[combination[0]] == board[combination[1]] && board[combination[1]] == board[combination[2]]
-      if board[combination[0]] == "X" || board[combination[0]] == "O"
-        return combination
-      end
-    end
+  WIN_COMBINATIONS.detect do |combo|
+    board[combo[0]] == board[combo[1]] &&
+    board[combo[1]] == board[combo[2]] &&
+    position_taken?(board, combo[0])
   end
 end
 
 def full?(board)
-  board.all? { |e| e == "X" || e == "O" }
-
+  board.all?{|token| token == "X" || token == "O"}
 end
 
 def draw?(board)
-  won = won?(board)
-  if won == false && full?(board)
-      return true
-  else
-      return false
-  end
+  full?(board) && !won?(board)
 end
 
 def over?(board)
-  won = won?(board)
-  if won != false || full?(board) || draw?(board)
-    return true
-  else
-    return false
-  end
+  won?(board) || full?(board)
 end
 
 def winner(board)
-  won = won?(board)
-  if won != false
-    return board[won[0]]
+  if winning_combo = won?(board)
+    board[winning_combo.first]
   end
 end
