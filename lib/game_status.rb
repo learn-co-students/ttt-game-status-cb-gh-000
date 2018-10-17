@@ -17,32 +17,6 @@ WIN_COMBINATIONS = [
 
 board=[" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
-def won?(board)
-
-  true
-
-  false
-
-end
-
-def full?(board)
-
-end
-
-def draw?(board)
-
-end
-
-def over?(board)
-
-end
-
-def winner?(board)
-
-end
-
-
-WIN_COMBINATIONS = [[0,1,2], [3,4,5], [6,7,8], [0,4,8], [2,4,6], [0,3,6],[1,4,7],[2,5,8]]
  def won? (board)
  #empty field
 empty = board.all? do |field|
@@ -94,7 +68,8 @@ end
   return true
 end
 end
- def over? (board)
+
+def over? (board)
   if draw?(board)
     return true
   end
@@ -102,20 +77,21 @@ end
     return true
   end
 end
- def winner (board)
+
+def winner (board)
    if draw? (board)
-    return nil
-  end
-  if won? (board)
-   WIN_COMBINATIONS.each do |set1|
-    if (board[set1[0]] == board[set1[1]] && board[set1[1]]  == board[set1[2]])
-      if (board[set1[0]] == "X")
-        return "X"
-      end
-      if (board[set1[0]] == "O")
-        return "O"
+     return nil
+    end
+    if won? (board)
+      WIN_COMBINATIONS.each do |set1|
+        if (board[set1[0]] == board[set1[1]] && board[set1[1]]  == board[set1[2]])
+          if (board[set1[0]] == "X")
+            return "X"
+          end
+          if (board[set1[0]] == "O")
+            return "O"
+          end
+        end
       end
     end
   end
-end
-end
