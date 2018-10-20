@@ -18,6 +18,11 @@ end
 ]
 #won method
 def won?(board)
+  # WIN_COMBINATIONS.detect do |combo|
+  #   board[combo[0]] == board[combo[1]] &&
+  #   board[combo[1]] == board[combo[2]] &&
+  #   position_taken?(board, combo[0])
+  # end
   WIN_COMBINATIONS.each {|win_combo|
     index_0 = win_combo[0]
     index_1 = win_combo[1]
@@ -50,6 +55,9 @@ def over?(board)
 end
 
 def winner(board)
+  #solution -> if winning_combo = won?(board)
+  # =>              board[winning_combo.first]
+  #=>            end end
  win = won?(board)
  win ? board[win[0]] : nil
 end
