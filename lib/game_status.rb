@@ -29,32 +29,54 @@ def won?(board)
 end  
 
 def full?(board) 
-board.none? { #returns true if all iterations return false
+board.none? { 
+#returns true if all iterations return false
 |val|
 val==" "
 }
 end  
 def draw?(board)
-if full?(board)==true && won?(board)==false
+  if full?(board)==true && won?(board)==false
   return true
-elsif won?(board)==false&& full?(board)==false
-return false
-elsif won?(board)==true
+  elsif won?(board)==false&& full?(board)==false
+  return false
+  elsif won?(board)==true
   return false 
-end  
+  end  
 end
 
 def over?(board)
-  
  if won?(board)!=false
   return true
-elsif full?(board)==true
-return true
-elsif won?(board)==false && full?(board)==true
+ elsif full?(board)==true
+ return true
+ elsif won?(board)==false && full?(board)==true
   return true
-else 
+ else 
   return false
 end  
 end
 
   
+def winner(board)
+  cx=0 
+  colear=0
+  arr=won?(board)
+  if arr!=false
+    arr.each do |i|
+      if board[i]=="X"
+        cx+=1
+      elsif board[i]=="O"
+      co+=1
+      end 
+  end
+  if(cx==3)
+  return "X"
+elsif (co==3)
+return "O"
+else
+  nil
+end 
+end
+ 
+end 
