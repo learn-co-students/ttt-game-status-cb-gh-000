@@ -59,9 +59,6 @@ def full?(board)
 end
 
 def draw?(board)
-  if board == ["X", "O", "X", "O", "X", "O", "O", "O", "X"]
-    return false
-  end
   if won?(board)
     return false
   end
@@ -77,9 +74,6 @@ end
 
 
 def over?(board)
-  if board == ["X", " ", "X", " ", "X", " ", "O", "O", " "]
-    return false
-  end
   if won?(board) || draw?(board) || full?(board)
     return true
   else
@@ -89,9 +83,6 @@ end
 
 
 def winner(board)
-  if board == ["X", "O", " ", " ", " ", " ", " ", "O", "X"]
-    return nil
-  end
   if full?(board) || !won?(board)
     return nil
   end
