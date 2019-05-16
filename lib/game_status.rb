@@ -14,15 +14,14 @@ WIN_COMBINATIONS = [
   [1,4,7],
   [2,5,8]
 ]
-def won? (board)
-#  for each win_combination in
-    WIN_COMBINATIONS.each do |win_combination|
+
+def won? (board = [" "," "," ","X","X","X"," "," "," "])
+  WIN_COMBINATIONS.each do |win_combination|
   # win_combination is a 3 element array of indexes that compose a win, [0,1,2]
   # grab each index from the win_combination that composes a win.
     win_index_1 = win_combination[0]
     win_index_2 = win_combination[1]
     win_index_3 = win_combination[2]
-
     position_1 = board[win_index_1] # load the value of the board at win_index_1
     position_2 = board[win_index_2] # load the value of the board at win_index_2
     position_3 = board[win_index_3] # load the value of the board at win_index_3
@@ -30,20 +29,19 @@ def won? (board)
     if position_1 == "X" && position_2 == "X" && position_3 == "X"
       return win_combination # return the win_combination indexes that won.
     elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
-      winner = "O"
       return win_combination # return the win_combination indexes that won.
     else
-      false
     end
   end
+  return false
+  #因为迭代结束才return false 因为第一个迭代不匹配 还有可能其他迭代匹配啊
 end
 def full? (board)
   counter = 0;
   board.each do |element|
-    if element == "X" || element == "O"
+    if element == "X" ||element == "O"
       counter += 1;
     else
-      false
     end
   end
   if counter == 9
@@ -60,17 +58,17 @@ def  draw? (board)
   end
 end
 def  over?(board)
-  if win?(board) || draw?(board) || full?(board)
+  if won?(board) || draw?(board) || full?(board)
     true
   else
     false
   end
 end
 def  winner(board)
-  winner = "X"
-  if won?(board)
-    return winner
+  win = won?(board)
+  if win
+    return board[win[0]]
   else
-    false
+    nil
   end
 end
