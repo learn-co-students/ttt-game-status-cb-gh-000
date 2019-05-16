@@ -40,7 +40,7 @@ end
 def full? (board)
   counter = 0;
   board.each do |element|
-    if element == "X" | element == "O"
+    if element == "X" || element == "O"
       counter += 1;
     else
       false
@@ -60,7 +60,7 @@ def  draw? (board)
   end
 end
 def  over?(board)
-  if win?(board) | draw?(board) | full?(board)
+  if win?(board) || draw?(board) || full?(board)
     true
   else
     false
