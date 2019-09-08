@@ -3,4 +3,51 @@ def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
+def won?(board)
+  WIN_COMBINATIONS.each do |comb|
+    i1,i2,i3=comb[0],comb[1],comb[2]
+    p1,p2,p3=board[i1],board[i2],board[i3]
+    if p1==p2 && p2==p3 && position_taken?(board, i1)
+      return comb
+    end
+  end
+  return false
+end
+
+def full?(board)
+  bool=board.all? do |a|
+    a!=" " and a!=nil
+  end
+  return bool
+end
+
+def draw?(board)
+  if full?(board) && !won?(board)
+    return true
+  end
+  return false
+end
+
+def over?(board)
+  draw?(board) || full?(board) || won?(board)
+end
+
+def winner(board)
+  win=won?(board)
+  if !win
+    return nil
+  end
+  return board[win[0]]
+end
+
 # Define your WIN_COMBINATIONS constant
+WIN_COMBINATIONS=[
+  [0,1,2],
+  [3,4,5],
+  [6,7,8],
+  [0,3,6],
+  [1,4,7],
+  [2,5,8],
+  [0,4,8],
+  [2,4,6]
+]
